@@ -12,6 +12,7 @@
         {
             background-color: transparent;
             border: none;
+            padding: 0;
         }
         .nav-tabs .nav-item {
             flex: 1; /* Distribuye el espacio uniformemente */
@@ -40,7 +41,8 @@
 
         .tab-content {
             border: none; /* Sin borde alrededor del contenido */
-            padding: 20px;
+            padding: 0;
+            margin: 0;
         }
 
         .icon-tab {
@@ -101,8 +103,9 @@
             box-shadow: 0 0 3px 3px rgba(255, 0, 0, 0.5); /* Sombra roja */
         }
         .form-check-label {
-            font-size: 1.5rem; /* Tamaño del texto de la etiqueta */
+            font-size: 1.3rem; /* Tamaño del texto de la etiqueta */
             margin-left:1rem;
+            text-align: justify;
         }
 
         #banner_1 {
@@ -266,6 +269,163 @@
         }
 
 
+
+        .info-block {
+            border: none;
+            padding: 10px 0;
+        }
+
+        .info-block label {
+            font-weight: bold;
+            display: block;
+            color: #333;
+        }
+
+        .info-block p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        /* Elimina la línea en el último bloque */
+        .info-block:last-child {
+            border-bottom: none;
+        }
+
+        .btn_enviar
+        {
+            background-color: red;
+            color: white;
+            border: none;
+            /*padding-right: 50px;*/
+            /*padding-left: 50px;*/
+            /*padding-top: 10px;*/
+            /*padding-bottom: 10px;*/
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            width: 7rem;
+        }
+
+         .btn_atras{
+             background-color: red;
+             color: white;
+             border: none;
+             padding-right: 30px;
+             padding-left: 30px;
+             padding-top: 10px;
+             padding-bottom: 10px;
+             font-size: 1rem;
+             cursor: pointer;
+             border-radius: 20px;
+             font-weight: bold;
+         }
+
+         .btn_atras img {
+             width: 1rem;
+             margin-right: 7px;
+             border-radius: 20px;
+         }
+         .btn_siguiente
+         {
+             background-color: red;
+             color: white;
+             border: none;
+             padding-right: 30px;
+             padding-left: 30px;
+             padding-top: 10px;
+             padding-bottom: 10px;
+             font-size: 1rem;
+             cursor: pointer;
+             border-radius: 20px;
+             font-weight: bold;
+         }
+        .btn_siguiente img {
+            width: 1rem;
+            margin-left: 7px;
+            border-radius: 20px;
+        }
+        .info-block button{
+            background-color: #EB0A1E;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            width: 4rem;
+            font-weight: bold;
+        }
+
+        .info-block .box_campo{
+            display: flex;
+            align-items: center;
+            border: solid 1px #E9EAE8;
+            width: 100%; margin-left: 10px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            justify-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: justify;
+            background-color: white;
+
+        }
+
+        .img-fluid
+        {
+            width: 50%;
+            height: auto;
+        }
+
+        .red-background {
+            background-color: red;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .custom-container {
+            background-color: red;
+            padding: 20px;
+        }
+
+        .custom-text {
+            color: white;
+            text-align: left;
+        }
+
+        .heading {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+        }
+
+        .custom-padding {
+            padding: 50px;
+        }
+
+        .identification {
+            font-size: 2rem;
+            text-align: justify;
+        }
+
+        .reminder {
+            font-size: 1.5rem;
+            text-align: justify;
+        }
+
+
+        @media (max-width: 768px) {
+            .text-white p {
+                font-size: 1.2rem; /* Tamaño de fuente más pequeño para dispositivos móviles */
+            }
+        }
+
         /* Media query para pantallas con un ancho máximo de 1280px */
         @media (max-width: 1280px) {
             #home input {
@@ -299,14 +459,105 @@
                 background-color: red; /* Color de fondo rojo */
                 color: white; /* Color de texto blanco */
                 border-color: red; /* Borde del mismo color rojo */
-                margin-bottom: 20px;
+                /*margin-bottom: 20px;*/
             }
-
-            #profile-tab {
-
-            }
-
         }
+
+
+        @media (max-width: 1280px) {
+            #profile .form-control, #profile .form-select {
+                font-size: 0.8rem; /* Más pequeño en dispositivos de baja resolución */
+                height: 30px; /* Altura más reducida para los inputs */
+            }
+            #profile .form-label {
+                font-size: 0.8rem; /* Etiquetas más pequeñas en dispositivos de baja resolución */
+            }
+
+            #profile .mb-3 {
+                margin-bottom: 20px; /* Reduce el margen para una mejor visualización */
+            }
+            .btn_enviar
+            {
+                background-color: red;
+                color: white;
+                border: none;
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 20px;
+                font-weight: bold;
+
+            }
+
+            #btnatras{
+                background-color: red;
+                color: white;
+                border: none;
+                /*padding-right: 30px;*/
+                /*padding-left: 30px;*/
+                /*padding-top: 10px;*/
+                /*padding-bottom: 10px;*/
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 20px;
+                font-weight: bold;
+                padding-top: 10px;
+                padding-bottom: 10px;;
+            }
+        }
+
+        /* Para pantallas extremadamente pequeñas como 720px de ancho */
+        @media (max-width: 720px) {
+            #profile .form-control, #profile .form-select {
+                font-size: 11px; /* Aún más pequeño para dispositivos muy pequeños */
+                height: 32px; /* Altura más reducida aún */
+            }
+            #profile .form-label {
+                font-size: 0.7rem; /* Etiquetas muy pequeñas en dispositivos muy pequeños */
+            }
+
+            #profile .mb-3 {
+                margin-bottom: 8px; /* Margen aún menor */
+            }
+            .img-fluid
+            {
+                width: 30%;
+                height: auto;
+            }
+            .identification {
+                font-size: 1.5rem;
+                text-align: justify;
+            }
+            .heading {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+            .sub-heading {
+                font-size: 1.5rem;
+            }
+
+            .custom-padding {
+                padding: 50px;
+            }
+
+            .reminder {
+                font-size: 1rem;
+                text-align: justify;
+            }
+            .form-check-label {
+                font-size: 1rem; /* Tamaño del texto de la etiqueta */
+                margin-left:1rem;
+                text-align: justify;
+            }
+            .form-check-input {
+                accent-color: red; /* Cambia el color del tick a rojo */
+                width: 1.2rem; /* Tamaño de la casilla */
+                height: 1.2rem; /* Tamaño de la casilla */
+                margin-top: 0.4rem;
+            }
+        }
+
+
         /*.form-label {*/
         /*    font-size: 0.7rem; !* Cambia el tamaño de la fuente de los labels *!*/
         /*    color: #333; !* Cambia el color del texto *!*/
@@ -326,43 +577,45 @@
 <div id="initial-page" class="container mt-5">
     <div class="card">
         <div class="card-body">
-            <div class="row" >
-                <!-- Sección de texto e imagen -->
-                <div class="col-sm-12 col-lg-6" style="background-color: red; padding: 20px">
-                    <div class="d-flex justify-content-between">
-                        <!-- Texto -->
-                        <!-- Sección de texto e imagen -->
-                        <div class="col-sm-12 col-lg-6 d-flex align-items-center" style="background-color: red; padding: 20px">
-                            <div style="color: white; text-align: left;">
-                                <p style="font-size: 2rem; font-weight: bold">Formulario Web</p>
-                                <p style="font-size: 1.5rem;">¿Tienes alguna consulta o solicitud?</p>
-                                <p style="font-size: 1.5rem;">Este es el lugar.</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <div class="custom-container">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="custom-text">
+                                    <p class="heading">Formulario Web</p>
+                                    <p class="sub-heading">¿Tienes alguna consulta o solicitud?</p>
+                                    <p class="sub-heading">Este es el lugar.</p>
+                                </div>
+                                <!-- Imagen -->
+                                <img src="https://i.imgur.com/JVs2YBI.png" class="img-fluid">
                             </div>
                         </div>
-                        <!-- Imagen -->
-                        <img src="https://i.imgur.com/JVs2YBI.png" width="50%" style="height: auto; padding: 10px;" class="img-fluid">
                     </div>
                 </div>
-                <!-- Sección del formulario -->
-                <div class="col-sm-12 col-lg-6" style="padding: 50px">
-                    <p style="font-size: 2.8rem">Identifícate ingresando tu número de documento</p>
-                    <p style="font-size: 1.5rem">Recuerda que si representas a una persona jurídica, debes ingresar con el RUC de la empresa.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <select class="form-select flex-grow-1" aria-label="Selecciona tipo de documento" id="tipoDoc">
-                        </select>
-                        <input type="text" class="form-control" placeholder="Número de documento" id="nroDoc">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <div class="custom-padding">
+                            <p class="identification">Identifícate ingresando tu número de documento</p>
+                            <p class="reminder">Recuerda que si representas a una persona jurídica, debes ingresar con el RUC de la empresa.</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <select class="form-select flex-grow-1" aria-label="Selecciona tipo de documento" id="tipoDoc"></select>
+                                <input type="text" class="form-control" placeholder="Número de documento" id="nroDoc">
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="acceptTerms">
+                                <label class="form-check-label" for="acceptTerms">
+                                    He leído y acepto las condiciones de políticas de seguridad.
+                                </label>
+                            </div>
+                            <button class="btn btn-primary" onclick="continuarYBuscarCliente()" id="btncontinuar1">Continuar</button>
+                            <div id="loadingCliente" style="display:none;">Cargando...</div>
+                            <div id="datosCliente" style="display:none;">Aquí se mostrarán los datos del cliente.</div>
+                        </div>
                     </div>
-                    <div class="form-check mb-3">
-                        <input style="" class="form-check-input" type="checkbox" id="acceptTerms">
-                        <label style="" class="form-check-label" for="acceptTerms">
-                            He leído y acepto las condiciones de políticas de seguridad.
-                        </label>
-                    </div>
-                    <button class="btn btn-primary" onclick="continuarYBuscarCliente()" id="btncontinuar1">Continuar</button>
-                    <div id="loadingCliente" style="display:none;">Cargando...</div>
-                    <div id="datosCliente" style="display:none;">Aquí se mostrarán los datos del cliente.</div>
                 </div>
             </div>
+                <!-- Sección del formulario -->
         </div>
     </div>
 </div>
@@ -426,13 +679,13 @@
                                     <div class="col-md-5">
                                         <div class="mb-3">
                                             <label for="tipoDoc2" class="form-label">Tipo de documento</label>
-                                            <input type="text" class="form-control" id="tipoDoc2" placeholder="">
+                                            <input type="text" class="form-control" id="tipoDoc2" placeholder="" disabled>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="mb-3">
                                             <label for="nroDoc" class="form-label">Número de documento</label>
-                                            <input type="text" class="form-control" id="nroDoc2" placeholder="">
+                                            <input type="text" class="form-control" id="nroDoc2" placeholder="" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -440,7 +693,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="nombres" class="form-label">Nombres</label>
-                                            <input type="text" class="form-control" id="nombres" placeholder="">
+                                            <input type="text" class="form-control" id="nombres" placeholder="" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -448,13 +701,13 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="apellidoPaterno" class="form-label">Apellido Paterno*</label>
-                                            <input type="text" class="form-control" id="apellidoPaterno" placeholder="">
+                                            <input type="text" class="form-control" id="apellidoPaterno" placeholder="" disabled>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="apellidoMaterno" class="form-label">Apellido Materno*</label>
-                                            <input type="text" class="form-control" id="apellidoMaterno" placeholder="">
+                                            <input type="text" class="form-control" id="apellidoMaterno" placeholder="" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -484,10 +737,10 @@
                             </form>
                             <div class="row justify-content-between">
                                 <div class="col-auto">
-                                    <button class="btn btn-red" onclick="" id="btnatras">← Atrás</button>
+                                    <button class="btn_atras" onclick=""><img src="https://i.imgur.com/yAL1JdK.png">Atrás</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-red" onclick="continuarYPasarAPerfil()" id="btncontinuar2">Siguiente →</button>
+                                    <button class="btn_siguiente" onclick="continuarYPasarAPerfil()">Siguiente<img src="https://i.imgur.com/NfgeFxw.png"></button>
                                 </div>
                             </div>
                         </div>
@@ -538,20 +791,21 @@
                             <!--                            <h5>Datos del contrato y requerimientos/h5>-->
                             <form>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
 
-                                                <label for="tipoProducto" class="form-label">Tipo de Producto</label>
-                                                <input type="text" class="form-control" id="tipoProducto" readonly>
-
-                                        </div>
-                                    </div>
                                     <div class="col-md-3">
                                         <div class="mb-3">
                                             <label for="numeroContrato" class="form-label">Nro. Operación*</label>
                                             <select class="form-select" id="numeroContrato">
                                                 <option value="">Seleccionar</option> <!-- Opción predeterminada -->
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+
+                                            <label for="tipoProducto" class="form-label">Tipo de Producto</label>
+                                            <input type="text" class="form-control" id="tipoProducto" readonly>
+
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -855,15 +1109,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" id="enviarBtn">Enviar</button>
-
+<!--                                <button type="button" id="enviarBtn">Enviar</button>-->
                             </form>
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <button class="btn_atras" onclick=""><img src="https://i.imgur.com/yAL1JdK.png">Atrás</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn_siguiente" onclick="nextTab('contact-tab')">Siguiente<img src="https://i.imgur.com/NfgeFxw.png"></button>
+                                </div>
+                            </div>
                         </div>
                         <!-- Segunda columna para imágenes o información adicional -->
                         <div class="col-md-4 col-md-3 d-flex flex-column" style="text-align: center; padding-top: 20px; justify-items: center; align-content: center;align-items: center">
                             <div id="banner1" class="banner visible">
                                 <h3 style="color: red; font-weight: bold; font-size: 1.2rem">¡Soy Chat Mafito!</h3></br>
-                                <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:15rem;">
+                                <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:10rem;">
                                 <p style="font-size: 1rem; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>
                                 <p style="font-size: 1rem">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>
                                 <p style="font-size: 1rem">De lunes a viernes de 9 am a 6 pm</p>
@@ -882,11 +1143,132 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary mt-3" onclick="nextTab('contact-tab')">Continuar</button>
+
+<!--                    <button class="btn btn-primary mt-3" onclick="nextTab('contact-tab')">Continuar</button>-->
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <!-- Contenido de la pestaña Confirmación -->
-                    Confirmación aquí...
+                    <div class="row">
+                        <div class="col-md-8">
+
+                            <form>
+                            <div class="row">
+                                    <div class="col-md-12" style="background-image: url(https://i.imgur.com/MT9E4by.png); background-repeat: no-repeat">
+                                        <div class="mb-2">
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>1RO</button>
+                                                        <div class="box_campo">
+                                                            <label>Tipo de documento: </label>
+                                                            <span id="con_tipodoc" style="margin-left: 7px" value="#nrdoc">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>2DO</button>
+                                                        <div class="box_campo">
+                                                            <label>Número de documento: </label>
+                                                            <span id="con_nrodoc" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>3RO</button>
+                                                        <div class="box_campo">
+                                                            <label>Nombre: </label>
+                                                            <span id="con_nombre" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>4TO</button>
+                                                        <div class="box_campo">
+                                                            <label>Correo electrónico: </label>
+                                                            <span id="con_correo" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>5TO</button>
+                                                        <div class="box_campo">
+                                                            <label>Celular: </label>
+                                                            <span id="con_celular" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>6TO</button>
+                                                        <div class="box_campo">
+                                                            <label>Tipo de producto: </label>
+                                                            <span id="con_tipoproducto" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>7MO</button>
+                                                        <div class="box_campo">
+                                                            <label>Nro. Operación: </label><span id="con_nrocontrato" style="margin-left: 7px">74589</span>
+                                                            <label style="margin-left: 10px">Placa:</label>
+                                                            <span id="con_placa" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>8VO</button>
+                                                        <div class="box_campo">
+                                                            <label>Motivo: </label>
+                                                            <span id="con_motivo" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>9NO</button>
+                                                        <div class="box_campo">
+                                                            <label>Consulta o solicitud: </label>
+                                                            <span id="con_tipocaso" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>10MO</button>
+                                                        <div class="box_campo">
+                                                            <label>Documento adjuntos: </label>
+                                                            <span id="con_adjuntos" style="margin-left: 7px">DNI</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-block" style="display: flex; align-items: center">
+                                                        <button>11VO</button>
+                                                        <div class="box_campo">
+                                                            <label>Descríbenos tu caso:</label>
+                                                            <p id="con_descripcion" style="margin-left: 7px">Solicito reprogramación, debido que mi vehículo se encuentra en taller a causa de un siniestro, los repuestos serán importados y tiene una demora hasta de 3 meses. Por favor pido que me reprogramen, estoy al día con mis pagos.</p>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <p style="text-align: center">Antes de dar clic en el botón "Enviar",<strong> verifica que todos los datos que nos has brindado sean los correctos.</strong> De lo contrario, es momento de corregirlos.</p>
+                                    </div>
+                                </div>
+                                <!--                                <button class="btn btn-primary mt-3" onclick="nextTab('profile-tab')">Continuar</button>-->
+                            </form>
+<!--                            <div class="row justify-content-between">-->
+<!--                                <div class="col-auto">-->
+<!--                                    <button class="btn btn-red" onclick="" id="btnatras">← Atrás</button>-->
+<!--                                </div>-->
+<!--                                <div class="col-auto">-->
+<!--                                    <button class="btn btn-red" onclick="continuarYPasarAPerfil()" id="btncontinuar2">Siguiente →</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="row">
+                                <div class="col-md-12" style="display: flex; justify-content: space-between">
+                                    <button class="btn_atras" onclick=""><img src="https://i.imgur.com/yAL1JdK.png">Atrás</button>
+                                    <button type="button" class="btn_enviar" id="enviarBtn">Enviar</button>
+                                    <button type="button" class="btn_enviar" id="" style="visibility: hidden">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Segunda columna para imágenes o información adicional -->
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div id="banner_v" class="banner visible" style="text-align: center">
+                                    <h3 style="color: red; font-weight: bold; font-size: 1.2rem">¡Soy Chat Mafito!</h3></br>
+                                    <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:10rem;">
+                                    <p style="font-size: 1rem; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>
+                                    <p style="font-size: 1rem">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>
+                                    <p style="font-size: 1rem">De lunes a viernes de 9 am a 6 pm</p>
+                                    <img src="https://i.imgur.com/gUr5rcH.png" alt="mafito" style="width:10rem;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -924,9 +1306,10 @@
         // Selecciona el elemento select y el input
         const tipoDoc = document.getElementById('tipoDoc');
         const nroDoc = document.getElementById('nroDoc');
+        const nombres = document.getElementById('nombres');
 
         // Verifica que los elementos necesarios existan antes de agregar listeners
-        if (!tipoDoc || !nroDoc) {
+        if (!tipoDoc || !nroDoc || !nombres) {
             console.error('Algunos elementos esenciales no están presentes en el DOM.');
             return; // Detiene la ejecución adicional del código para evitar errores
         }
@@ -935,13 +1318,24 @@
         // Selecciona los elementos donde se reflejarán los valores
         const tipoDoc2 = document.getElementById('tipoDoc2');
         const nroDoc2 = document.getElementById('nroDoc2');
+        const spannrodoc = document.getElementById('con_nrodoc');
+        const con_tipodoc = document.getElementById('con_tipodoc');
+        const con_nombre = document.getElementById('con_nombre');
+
 
         // Verifica también estos elementos antes de proceder
-        if (!tipoDoc2 || !nroDoc2) {
+        if (!tipoDoc2 || !nroDoc2 || !spannrodoc || !con_tipodoc || !con_nombre) {
             console.error('No se encontraron los elementos para reflejar los valores.');
             return; // Detiene la ejecución adicional del código para evitar errores
         }
 
+        nombres.addEventListener('input', function() {
+            con_nombre.textContent = nombres.value;  // Actualiza el input del nombre
+        });
+
+        tipoDoc.addEventListener('change', function() {
+           con_tipodoc.textContent = tipoDoc.options[tipoDoc.selectedIndex].text;
+        });
         // Escucha cambios en el select
         tipoDoc.addEventListener('change', function() {
             // Actualiza el input del tipo de documento con el texto visible de la opción seleccionada
@@ -951,6 +1345,10 @@
         // Escucha cambios en el input del número de documento
         nroDoc.addEventListener('input', function() {
             nroDoc2.value = nroDoc.value;  // Actualiza el input del número de documento
+        });
+
+        nroDoc.addEventListener('input', function() {
+            spannrodoc.textContent = nroDoc.value;  // Actualiza el input del número de documento
         });
 
         document.getElementById('tipoCaso').addEventListener('change', function() {
@@ -997,7 +1395,12 @@
         cargarTiposDocumento();
         console.log(`La resolución de tu pantalla es: ${screen.width} x ${screen.height} píxeles`);
 
+
     });
+
+
+
+
     function cargarTiposDocumento() {
         fetch('https://middleware-maf-test-57ed4627fc8a.herokuapp.com/tipoDoc')
             .then(response => response.json())
@@ -1277,6 +1680,39 @@
         }
     }
 
+    function copiarValores() {
+        // Obtener valores
+        var tipoDoc = document.getElementById('tipoDoc').value;
+        var nroDoc = document.getElementById('nroDoc').value;
+        var nombres = document.getElementById('nombres').value;
+        var apellidoPaterno = document.getElementById('apellidoPaterno').value;
+        var apellidoMaterno = document.getElementById('apellidoMaterno').value;
+        var correo = document.getElementById('correo').value;
+        var telefono = document.getElementById('telefono').value;
+        var numeroContrato = document.getElementById('numeroContrato').value;
+        var tipoProducto = document.getElementById('tipoProducto').value;
+        var placa = document.getElementById('placa').value;
+        var tipoCaso = document.getElementById('tipoCaso').value;
+        var motivo = document.getElementById('motivos').value;
+        var submotivos = document.getElementById('submotivos').value;
+        var descripcion = document.getElementById('floatingTextarea2').value;
+
+        // Asignar valores
+        document.getElementById('con_tipodoc').textContent = tipoDoc;
+        document.getElementById('con_nrodoc').textContent = nroDoc;
+        document.getElementById('con_nombre').textContent = nombres;
+        document.getElementById('con_correo').textContent = correo;
+        document.getElementById('con_celular').textContent = telefono;
+        document.getElementById('con_tipoproducto').textContent = tipoProducto;
+        document.getElementById('con_nrocontrato').textContent = numeroContrato;
+        document.getElementById('con_placa').textContent = placa;
+        document.getElementById('con_motivo').textContent = motivo;
+        document.getElementById('con_tipocaso').textContent = tipoCaso;
+        document.getElementById('con_adjuntos').textContent = "2"; // Asumimos que hay 2 documentos adjuntos, cambiar según sea necesario
+        document.getElementById('con_descripcion').textContent = descripcion;
+    }
+
+    // Ejecutar función cuando el documento esté listo o después de alguna acción, por ejemplo un botón
 
 
 

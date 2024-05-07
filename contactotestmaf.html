@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Web con Pestañas</title>
+    <title>Formulario Contactanos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <style>
+
+        #home input {
+
+            border-color: black;
+        }
+
+        #home label
+        {
+            font-family: Arial;
+            font-weight: bold;
+        }
 
         .card-header
         {
@@ -716,12 +727,14 @@
                                         <div class="mb-3">
                                             <label for="correo" class="form-label">Correo electrónico</label>
                                             <input type="text" class="form-control" id="correo" placeholder="">
+                                            <input type="text" id="correo_original" style="display:none;">
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="mb-3">
                                             <label for="telefono" class="form-label">Celular</label>
                                             <input type="text" class="form-control" id="telefono" placeholder="">
+                                            <input type="text" id="celular_original" style="display:none;">
                                         </div>
                                     </div>
                                 </div>
@@ -1112,11 +1125,12 @@
 <!--                                <button type="button" id="enviarBtn">Enviar</button>-->
                             </form>
                             <div class="row justify-content-between">
+<!--                                <button onclick="copiarValores()">Copiar valores</button>-->
                                 <div class="col-auto">
-                                    <button class="btn_atras" onclick=""><img src="https://i.imgur.com/yAL1JdK.png">Atrás</button>
+                                    <button class="btn_atras" onclick="gotoTab('home-tab')"><img src="https://i.imgur.com/yAL1JdK.png">Atrás</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn_siguiente" onclick="nextTab('contact-tab')">Siguiente<img src="https://i.imgur.com/NfgeFxw.png"></button>
+                                    <button class="btn_siguiente" onclick="manejarClicBoton()">Siguiente<img src="https://i.imgur.com/NfgeFxw.png"></button>
                                 </div>
                             </div>
                         </div>
@@ -1159,86 +1173,89 @@
                                                         <button>1RO</button>
                                                         <div class="box_campo">
                                                             <label>Tipo de documento: </label>
-                                                            <span id="con_tipodoc" style="margin-left: 7px" value="#nrdoc">DNI</span>
+                                                            <span id="con_tipodoc" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>2DO</button>
                                                         <div class="box_campo">
                                                             <label>Número de documento: </label>
-                                                            <span id="con_nrodoc" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_nrodoc" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
-                                                        <button>3RO</button>
+                                                        <button onclick="gotoTab('home-tab')">3RO</button>
                                                         <div class="box_campo">
                                                             <label>Nombre: </label>
-                                                            <span id="con_nombre" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_nombre" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>4TO</button>
                                                         <div class="box_campo">
                                                             <label>Correo electrónico: </label>
-                                                            <span id="con_correo" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_correo" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>5TO</button>
                                                         <div class="box_campo">
                                                             <label>Celular: </label>
-                                                            <span id="con_celular" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_celular" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>6TO</button>
                                                         <div class="box_campo">
                                                             <label>Tipo de producto: </label>
-                                                            <span id="con_tipoproducto" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_tipoproducto" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>7MO</button>
                                                         <div class="box_campo">
-                                                            <label>Nro. Operación: </label><span id="con_nrocontrato" style="margin-left: 7px">74589</span>
+                                                            <label>Nro. Operación: </label><span id="con_nrocontrato" style="margin-left: 7px"></span>
                                                             <label style="margin-left: 10px">Placa:</label>
-                                                            <span id="con_placa" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_placa" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>8VO</button>
                                                         <div class="box_campo">
                                                             <label>Motivo: </label>
-                                                            <span id="con_motivo" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_motivo" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>9NO</button>
                                                         <div class="box_campo">
                                                             <label>Consulta o solicitud: </label>
-                                                            <span id="con_tipocaso" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_tipocaso" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>10MO</button>
                                                         <div class="box_campo">
                                                             <label>Documento adjuntos: </label>
-                                                            <span id="con_adjuntos" style="margin-left: 7px">DNI</span>
+                                                            <span id="con_adjuntos" style="margin-left: 7px"></span>
                                                         </div>
                                                     </div>
                                                     <div class="info-block" style="display: flex; align-items: center">
                                                         <button>11VO</button>
                                                         <div class="box_campo">
                                                             <label>Descríbenos tu caso:</label>
-                                                            <p id="con_descripcion" style="margin-left: 7px">Solicito reprogramación, debido que mi vehículo se encuentra en taller a causa de un siniestro, los repuestos serán importados y tiene una demora hasta de 3 meses. Por favor pido que me reprogramen, estoy al día con mis pagos.</p>
+                                                            <p id="con_descripcion" style="margin-left: 7px"></p>
                                                         </div>
                                                     </div>
                                         </div>
+
                                         <p style="text-align: center">Antes de dar clic en el botón "Enviar",<strong> verifica que todos los datos que nos has brindado sean los correctos.</strong> De lo contrario, es momento de corregirlos.</p>
                                     </div>
+
                                 </div>
                                 <!--                                <button class="btn btn-primary mt-3" onclick="nextTab('profile-tab')">Continuar</button>-->
                             </form>
+
 <!--                            <div class="row justify-content-between">-->
 <!--                                <div class="col-auto">-->
 <!--                                    <button class="btn btn-red" onclick="" id="btnatras">← Atrás</button>-->
@@ -1249,7 +1266,7 @@
 <!--                            </div>-->
                             <div class="row">
                                 <div class="col-md-12" style="display: flex; justify-content: space-between">
-                                    <button class="btn_atras" onclick=""><img src="https://i.imgur.com/yAL1JdK.png">Atrás</button>
+                                    <button class="btn_atras" onclick="gotoTab('profile-tab')"><img src="https://i.imgur.com/yAL1JdK.png" alt="f_atras">Atrás</button>
                                     <button type="button" class="btn_enviar" id="enviarBtn">Enviar</button>
                                     <button type="button" class="btn_enviar" id="" style="visibility: hidden">Enviar</button>
                                 </div>
@@ -1282,12 +1299,23 @@
     <button onclick="closeModal()">Cerrar</button>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <script>
     function nextTab(tabId) {
         let nextTab = document.getElementById(tabId);
         new bootstrap.Tab(nextTab).show(); // Bootstrap 5 utiliza esta forma para mostrar pestañas
     }
+
+    function gotoTab(tabId) {
+        // Bootstrap 5 activación de tab
+        const someTabTriggerEl = document.querySelector('#' + tabId);
+        const tab = new bootstrap.Tab(someTabTriggerEl);
+
+        tab.show(); // Usa la API de Bootstrap para mostrar la pestaña
+    }
+
 </script>
 <script>
     function showTabs() {
@@ -1306,7 +1334,9 @@
         // Selecciona el elemento select y el input
         const tipoDoc = document.getElementById('tipoDoc');
         const nroDoc = document.getElementById('nroDoc');
-        const nombres = document.getElementById('nombres');
+
+
+
 
         // Verifica que los elementos necesarios existan antes de agregar listeners
         if (!tipoDoc || !nroDoc || !nombres) {
@@ -1318,24 +1348,18 @@
         // Selecciona los elementos donde se reflejarán los valores
         const tipoDoc2 = document.getElementById('tipoDoc2');
         const nroDoc2 = document.getElementById('nroDoc2');
-        const spannrodoc = document.getElementById('con_nrodoc');
-        const con_tipodoc = document.getElementById('con_tipodoc');
-        const con_nombre = document.getElementById('con_nombre');
+        // const spannrodoc = document.getElementById('con_nrodoc');
+        // const con_tipodoc = document.getElementById('con_tipodoc');
+        // const con_nombre = document.getElementById('con_nombre');
 
 
         // Verifica también estos elementos antes de proceder
-        if (!tipoDoc2 || !nroDoc2 || !spannrodoc || !con_tipodoc || !con_nombre) {
+        if (!tipoDoc2 || !nroDoc2 ) {
             console.error('No se encontraron los elementos para reflejar los valores.');
             return; // Detiene la ejecución adicional del código para evitar errores
         }
 
-        nombres.addEventListener('input', function() {
-            con_nombre.textContent = nombres.value;  // Actualiza el input del nombre
-        });
 
-        tipoDoc.addEventListener('change', function() {
-           con_tipodoc.textContent = tipoDoc.options[tipoDoc.selectedIndex].text;
-        });
         // Escucha cambios en el select
         tipoDoc.addEventListener('change', function() {
             // Actualiza el input del tipo de documento con el texto visible de la opción seleccionada
@@ -1347,9 +1371,6 @@
             nroDoc2.value = nroDoc.value;  // Actualiza el input del número de documento
         });
 
-        nroDoc.addEventListener('input', function() {
-            spannrodoc.textContent = nroDoc.value;  // Actualiza el input del número de documento
-        });
 
         document.getElementById('tipoCaso').addEventListener('change', function() {
             cargarMotivos(this.value);
@@ -1367,27 +1388,61 @@
         document.getElementById('motivos').addEventListener('change', actualizarTextoPorSeleccion);
         document.getElementById('submotivos').addEventListener('change', actualizarTextoPorSeleccion);
 
+        // document.getElementById('correo').addEventListener('input', function() {
+        //     document.getElementById('correo_original').value = this.value; // Guarda el valor real
+        //     this.value = maskEmail(this.value); // Enmascara y actualiza el input visible
+        // });
+        //
+        // document.getElementById('telefono').addEventListener('input', function() {
+        //     document.getElementById('celular_original').value = this.value; // Guarda el valor real
+        //     this.value = maskPhone(this.value); // Enmascara y actualiza el input visible
+        // });
+
         document.getElementById('customButton').addEventListener('click', function() {
             document.getElementById('DocumentFiles').click();
         });
 
+        let accumulatedFiles = [];  // Almacena todos los archivos acumulados
+
         document.getElementById('DocumentFiles').addEventListener('change', function() {
+            // Agrega nuevos archivos a la lista acumulada
+            accumulatedFiles = accumulatedFiles.concat(Array.from(this.files));
+
+            updateFileList();
+        });
+
+        function updateFileList() {
             var fileList = document.getElementById('file-list');
-            for (let i = 0; i < this.files.length; i++) {
+            fileList.innerHTML = '';  // Limpiar la lista para actualizar la visualización
+
+            accumulatedFiles.forEach((file, index) => {
                 let li = document.createElement('li');
-                li.textContent = this.files[i].name + ' ';
+                li.textContent = file.name + ' ';
+
                 let removeButton = document.createElement('button');
                 let img = document.createElement('img');
-                img.src = 'https://i.imgur.com/PHUCp8i.png'; // ulr de la imagen del boton para eliminar
+                img.src = 'https://i.imgur.com/PHUCp8i.png';  // URL de la imagen del botón para eliminar
                 img.alt = 'Eliminar';
                 removeButton.appendChild(img);
+
                 removeButton.addEventListener('click', function() {
-                    li.parentNode.removeChild(li);
+                    // Eliminar el archivo de la lista acumulada
+                    accumulatedFiles = accumulatedFiles.filter((_, i) => i !== index);
+                    updateFileList();  // Actualizar la lista visualmente y en el input
                 });
+
                 li.appendChild(removeButton);
                 fileList.appendChild(li);
-            }
-        });
+            });
+
+            // Actualizar el input file con los archivos acumulados
+            const dataTransfer = new DataTransfer();
+            accumulatedFiles.forEach(file => dataTransfer.items.add(file));
+            document.getElementById('DocumentFiles').files = dataTransfer.files;
+
+            // Actualizar el contador de archivos
+            document.getElementById('con_adjuntos').textContent = accumulatedFiles.length + ' archivo(s)';
+        }
 
         document.getElementById('enviarBtn').addEventListener('click', enviarCaso);
 
@@ -1400,6 +1455,25 @@
 
 
 
+    function aplicarCambios() {
+
+        // document.getElementById('correo_original').value = document.getElementById('correo').value;
+        // document.getElementById('celular_original').value = document.getElementById('telefono').value;
+
+        let correoVisible = document.getElementById('correo').value;
+        let celularVisible = document.getElementById('telefono').value;
+
+        // Verifica si contienen asteriscos antes de copiar a los campos ocultos y enmascarar
+        if (!correoVisible.includes('***')) {
+            document.getElementById('correo_original').value = correoVisible;
+            //document.getElementById('correo').value = maskValue(correoVisible);
+        }
+
+        if (!celularVisible.includes('***')) {
+            document.getElementById('celular_original').value = celularVisible;
+            //document.getElementById('telefono').value = maskValue(celularVisible);
+        }
+    }
 
     function cargarTiposDocumento() {
         fetch('https://middleware-maf-test-57ed4627fc8a.herokuapp.com/tipoDoc')
@@ -1415,12 +1489,35 @@
             .catch(error => console.error('Error cargando tipos de documento:', error));
     }
 
+    function maskData() {
+        // Apellido Paterno y Materno: Muestra solo las últimas 3 letras
+
+        // Correo Electrónico: Muestra solo las últimas 3 letras antes del dominio
+        var correo = document.getElementById('correo').value;
+        var correoParts = correo.split('@');
+        if (correoParts[0].length > 3) {
+            document.getElementById('correo').value = '*'.repeat(correoParts[0].length - 3) + correoParts[0].slice(-3) + '@' + correoParts[1];
+        }
+
+        // Celular: Muestra solo los últimos 3 dígitos
+        var celular = document.getElementById('telefono').value;
+        if (celular.length > 3) {
+            document.getElementById('telefono').value = '*'.repeat(celular.length - 3) + celular.slice(-3);
+        }
+    }
+
 
     function continuarYBuscarCliente() {
+
         buscarCliente(); // Primero invoca buscarCliente para cargar los datos
         showTabs(); // Luego cambia a la siguiente pestaña
     }
 
+    function manejarClicBoton() {
+
+        copiarValores();  // Primero copia los valores
+        nextTab('contact-tab');  // Luego avanza a la siguiente pestaña
+    }
 
     function buscarCliente() {
         console.log('buscarCliente() se ha llamado');
@@ -1438,31 +1535,37 @@
             })
             .then(cliente => {
                 console.log('Cliente:', cliente);
-
+                let nombreCompleto = '';
                 // Verifica si es una persona o empresa y asigna datos según corresponda
                 if (cliente.Tipo === 'Persona') {
-                    // Datos específicos de personas
-                    document.getElementById('nombres').value = cliente.Primer_nombre + ' ' + (cliente.Segundo_nombre || '');
+                    nombreCompleto = cliente.Primer_nombre + ' ' + (cliente.Segundo_nombre || '');
                     document.getElementById('apellidoPaterno').value = cliente.Apellido_paterno;
                     document.getElementById('apellidoMaterno').value = cliente.Apellido_materno;
                 } else if (cliente.Tipo === 'Empresa') {
-                    // Datos específicos de empresas
-                    document.getElementById('nombres').value = cliente.Nombre_comercial || cliente.Nombre; // Ajusta según tus datos
-                    document.getElementById('apellidoPaterno').value = '';
-                    document.getElementById('apellidoMaterno').value = '';
+                    nombreCompleto = cliente.Nombre_comercial || cliente.Nombre; // Ajusta según tus datos
+                    document.getElementById('apellidoPaterno').value = '.';
+                    document.getElementById('apellidoMaterno').value = '.';
                 }
+                document.getElementById('nombres').value = nombreCompleto;
+
 
                 document.getElementById('correo').value = cliente.Email;
+                document.getElementById('correo_original').value = cliente.Email;
+
                 document.getElementById('telefono').value = cliente.Telefono || cliente.Telefono2;
+                document.getElementById('celular_original').value = cliente.Telefono || cliente.Telefono2;
 
                 // Oculta el indicador de carga y muestra los datos
                 document.getElementById('loadingCliente').style.display = 'none';
                 document.getElementById('datosCliente').style.display = 'block';
 
                 // Cambia a la siguiente pestaña si es necesario
+                maskData();
                 showTabs();
 
+
             })
+
             .catch(error => {
                 console.error('Error:', error);
                 document.getElementById('loadingCliente').style.display = 'none';
@@ -1470,8 +1573,10 @@
             });
     }
 
+
     async function continuarYPasarAPerfil() {
         try {
+            aplicarCambios(); // Aplica los cambios antes de cargar los datos del contrato
             await cargarContrato();  // Espera a que los datos del contrato se carguen
             nextTab('profile-tab');  // Cambia a la pestaña de perfil
         } catch (error) {
@@ -1610,8 +1715,8 @@
             Nombres: document.getElementById('nombres').value,
             ApellidoPaterno: document.getElementById('apellidoPaterno').value,
             ApellidoMaterno: document.getElementById('apellidoMaterno').value,
-            Email: document.getElementById('correo').value,
-            Celular: document.getElementById('telefono').value,
+            Email: document.getElementById('correo_original').value,
+            Celular: document.getElementById('celular_original').value,
             TipoCaso: tipoCaso,
             Motivo: document.getElementById('motivos').value,
             SubMotivo: document.getElementById('submotivos').value,
@@ -1681,41 +1786,53 @@
     }
 
     function copiarValores() {
-        // Obtener valores
-        var tipoDoc = document.getElementById('tipoDoc').value;
-        var nroDoc = document.getElementById('nroDoc').value;
-        var nombres = document.getElementById('nombres').value;
-        var apellidoPaterno = document.getElementById('apellidoPaterno').value;
-        var apellidoMaterno = document.getElementById('apellidoMaterno').value;
-        var correo = document.getElementById('correo').value;
-        var telefono = document.getElementById('telefono').value;
-        var numeroContrato = document.getElementById('numeroContrato').value;
-        var tipoProducto = document.getElementById('tipoProducto').value;
-        var placa = document.getElementById('placa').value;
-        var tipoCaso = document.getElementById('tipoCaso').value;
-        var motivo = document.getElementById('motivos').value;
-        var submotivos = document.getElementById('submotivos').value;
-        var descripcion = document.getElementById('floatingTextarea2').value;
 
-        // Asignar valores
-        document.getElementById('con_tipodoc').textContent = tipoDoc;
-        document.getElementById('con_nrodoc').textContent = nroDoc;
-        document.getElementById('con_nombre').textContent = nombres;
-        document.getElementById('con_correo').textContent = correo;
-        document.getElementById('con_celular').textContent = telefono;
-        document.getElementById('con_tipoproducto').textContent = tipoProducto;
-        document.getElementById('con_nrocontrato').textContent = numeroContrato;
-        document.getElementById('con_placa').textContent = placa;
-        document.getElementById('con_motivo').textContent = motivo;
-        document.getElementById('con_tipocaso').textContent = tipoCaso;
-        document.getElementById('con_adjuntos').textContent = "2"; // Asumimos que hay 2 documentos adjuntos, cambiar según sea necesario
-        document.getElementById('con_descripcion').textContent = descripcion;
+        document.getElementById('con_nombre').textContent = document.getElementById('nombres').value;
+        document.getElementById('con_correo').textContent = document.getElementById('correo_original').value;
+        document.getElementById('con_celular').textContent = document.getElementById('celular_original').value;
+        document.getElementById('con_nrodoc').textContent = document.getElementById('nroDoc').value;
+        document.getElementById('con_placa').textContent = document.getElementById('placa').value;
+        document.getElementById('con_tipodoc').textContent = document.getElementById('tipoDoc').options[document.getElementById('tipoDoc').selectedIndex].text;
+        document.getElementById('con_tipocaso').textContent = document.getElementById('tipoCaso').options[document.getElementById('tipoCaso').selectedIndex].text;
+        document.getElementById('con_motivo').textContent = document.getElementById('motivos').options[document.getElementById('motivos').selectedIndex].text;
+        document.getElementById('con_nrocontrato').textContent = document.getElementById('numeroContrato').options[document.getElementById('numeroContrato').selectedIndex].text;
+        document.getElementById('con_tipoproducto').textContent = document.getElementById('tipoProducto').value;
+        document.getElementById('con_descripcion').textContent = document.getElementById('floatingTextarea2').value;
+
+    }
+
+    function manejarClicBoton() {
+        copiarValores();  // Primero copia los valores
+        nextTab('contact-tab');  // Luego avanza a la siguiente pestaña
     }
 
     // Ejecutar función cuando el documento esté listo o después de alguna acción, por ejemplo un botón
 
 
-
+    // function maskData() {
+    //     // Apellido Paterno y Materno: Muestra solo las últimas 3 letras
+    //     var apellidoPaterno = document.getElementById('apellidoPaterno').value;
+    //     var apellidoMaterno = document.getElementById('apellidoMaterno').value;
+    //     if (apellidoPaterno.length > 3) {
+    //         document.getElementById('apellidoPaterno').value = '*'.repeat(apellidoPaterno.length - 3) + apellidoPaterno.slice(-3);
+    //     }
+    //     if (apellidoMaterno.length > 3) {
+    //         document.getElementById('apellidoMaterno').value = '*'.repeat(apellidoMaterno.length - 3) + apellidoMaterno.slice(-3);
+    //     }
+    //
+    //     // Correo Electrónico: Muestra solo las últimas 3 letras antes del dominio
+    //     var correo = document.getElementById('correo').value;
+    //     var correoParts = correo.split('@');
+    //     if (correoParts[0].length > 3) {
+    //         document.getElementById('correo').value = '*'.repeat(correoParts[0].length - 3) + correoParts[0].slice(-3) + '@' + correoParts[1];
+    //     }
+    //
+    //     // Celular: Muestra solo los últimos 3 dígitos
+    //     var celular = document.getElementById('telefono').value;
+    //     if (celular.length > 3) {
+    //         document.getElementById('telefono').value = '*'.repeat(celular.length - 3) + celular.slice(-3);
+    //     }
+    // }
 
 
 
